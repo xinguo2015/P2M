@@ -1,4 +1,5 @@
 core
 p2mgui/p2mgui.depend
 p2mgui/p2mgui.layout
-
+build/
+/**/*~
