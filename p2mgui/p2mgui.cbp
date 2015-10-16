@@ -12,7 +12,7 @@
 				<Option object_output="../build/debug/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="./data/dolphin.obj" />
+				<Option parameters="~/Documents/Dolphin.obj" />
 				<Compiler>
 					<Add option="-Wall" />
 					<Add option="-g" />
@@ -29,7 +29,7 @@
 				<Option object_output="../build/release/" />
 				<Option type="1" />
 				<Option compiler="gcc" />
-				<Option parameters="./data/dolphin.obj" />
+				<Option parameters="~/Documents/Dolphin.obj" />
 				<Compiler>
 					<Add option="-O3" />
 					<Add option="-Wall" />

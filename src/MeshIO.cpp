@@ -17,7 +17,7 @@
 namespace xglm {
 
 	int loadOBJ(FILE* fp, std::vector<Vec3f> & vertices, std::vector<TriFace> & faces);
-	int loadPLY(FILE* fp, std::vector<Vec3f> & vertices, std::vector<TriFace> & faces);
+	//int loadPLY(FILE* fp, std::vector<Vec3f> & vertices, std::vector<TriFace> & faces);
 
 	template<>
 	bool MeshIO<TriMesh>::createFromOBJ(TriMesh * mesh,  FILE * fp )
@@ -35,7 +35,7 @@ namespace xglm {
 	template<>
 	bool MeshIO<TriMesh>::createFromPLY(TriMesh * mesh,  FILE * fp )
 	{
-		if( !loadPLY(fp, mesh->_vertices, mesh->_faces) )
+	//	if( !loadPLY(fp, mesh->_vertices, mesh->_faces) )
 			return false;
 		mesh->needBBox();
 		mesh->needFaceNormals();
@@ -55,9 +55,9 @@ namespace xglm {
 		if( ! fp ) return false;
 
 		bool bResult = false;
-		if( strcasecmp(pext,"obj")==0 )
+		if( strcasecmp(pext,".obj")==0 )
             bResult = MeshIO<TriMesh>::createFromOBJ(mesh, fp);
-        else if( strcasecmp(pext,"ply")==0 )
+        else if( strcasecmp(pext,".ply")==0 )
             bResult = MeshIO<TriMesh>::createFromPLY(mesh, fp);
 		fclose(fp);
 		return bResult;

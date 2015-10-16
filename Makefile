@@ -9,13 +9,13 @@ ver = debug#
 ifeq ($(ver), debug)
 	TARGET  := MeshView-d#
 	OBJDir  := $(BUILD)debug/
-	CCFLAGS := -g -Wall
+	CCFLAGS := -pthread -g -Wall
 else
 	TARGET  := MeshView#
 	OBJDir  := $(BUILD)release/
 	CCFLAGS := -o3 -Wall
 endif
-LIBS := -lm -lGL -lGLU -lglut
+LIBS := -lpthread -lglut -lGL -lGLU -lglut -lm 
 TARGET  := $(BUILD)$(TARGET)
 CPPFILE := $(wildcard $(SRC)*.cpp)
 CPPOBJS := $(patsubst %.cpp, %.o, $(CPPFILE))
